@@ -1,7 +1,7 @@
 const PROJECT_ID = '7641895293088481286';
 // After deploying the Worker, set its exact HTTPS endpoint here.
 // This URL is public configuration, not a credential.
-const TOKEN_ENDPOINT = '';
+const TOKEN_ENDPOINT = 'https://coze-demo-auth.coze-worker-secure-0c1b8f3f48c44ec9a6ff7deb073be221.workers.dev/api/coze-token';
 const SDK_URL = 'https://lf-cdn.coze.cn/obj/unpkg/latest/coze/web-sdk/dist/js-umd/index.min.js';
 
 const form = document.querySelector('#unlock');
