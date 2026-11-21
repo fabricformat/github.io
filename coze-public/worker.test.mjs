@@ -91,7 +91,7 @@ test('request uses fixed endpoint and exact lexical project ID; forwards only so
   t.mock.method(globalThis, 'fetch', async (url, init) => {
     assert.equal(url, 'https://mh2n22gcnm.coze.site/stream_run');
     assert.equal(init.headers.Authorization, 'Bearer ' + token);
-    assert.equal(init.redirect, 'error');
+    assert.equal(init.redirect, 'manual');
     assert.match(init.body, /"project_id":7641895293088481286}$/);
     const payload = JSON.parse(init.body);
     assert.equal(payload.type, 'query');
@@ -130,6 +130,7 @@ test('fails closed on incomplete, error and oversized streams; no raw upstream/c
     () => stream(answer(1, '字'.repeat(4000)), done),
     () => new Response('non-SSE'),
     () => new Response('sensitive auth error', { status: 401 }),
+    () => new Response(null, { status: 302, headers: { Location: 'https://example.com/' } }),
   ];
   t.mock.method(globalThis, 'fetch', () => list.shift()());
   while (list.length) {
