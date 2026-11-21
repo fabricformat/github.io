@@ -5,7 +5,7 @@ workers_dev = true
 preview_urls = false
 
 [vars]
-PAGES_ORIGIN = "https://fabricformat.github.io"
+PAGES_ORIGIN = "https://graceful-jelly-64d31b.netlify.app"
 
 [[ratelimits]]
 name = "TOKEN_RATE_LIMIT"
