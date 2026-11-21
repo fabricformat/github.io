@@ -1,0 +1,16 @@
+name = "coze-demo-auth"
+main = "worker.mjs"
+compatibility_date = "2026-09-01"
+workers_dev = true
+preview_urls = false
+
+[vars]
+PAGES_ORIGIN = "https://fabricformat.github.io"
+
+[[ratelimits]]
+name = "TOKEN_RATE_LIMIT"
+namespace_id = "7641895293"
+
+[ratelimits.simple]
+limit = 6
+period = 60
