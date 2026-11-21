@@ -1,4 +1,4 @@
-const ENDPOINT = '__WORKER_ENDPOINT__';
+const ENDPOINT = 'https://coze-public-demo.coze-worker-secure-0c1b8f3f48c44ec9a6ff7deb073be221.workers.dev/api/chat';
 const form = document.querySelector('#ask');
 const field = document.querySelector('#question');
 const send = document.querySelector('#send');
