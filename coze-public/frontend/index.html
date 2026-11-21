@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>烟叶云服 · 公开问答</title>
+<style>
+:root{color-scheme:light;font:16px/1.6 system-ui,sans-serif;color:#20342a;background:#f5f7f3}
+*{box-sizing:border-box}body{margin:0}header{background:#224b37;color:#fff}
+header div,main{max-width:44rem;margin:auto;padding:1rem 1.25rem}
+h1{font-size:1.55rem;margin:.2rem 0}header p{margin:0;color:#e7f0e7}
+h2{font-size:1.05rem}main{padding-top:1.5rem}
+section,form{background:#fff;border:1px solid #dce5dc;border-radius:.85rem;padding:1rem;margin-bottom:1rem}
+textarea{font:inherit;display:block;width:100%;padding:.7rem;border-radius:.5rem;border:1px solid #82978a;resize:vertical}
+button{font:inherit;background:#224b37;color:#fff;border:0;border-radius:.5rem;padding:.5rem 1.1rem;min-height:44px;cursor:pointer}
+button:disabled{opacity:.65;cursor:wait}.actions{display:flex;gap:1rem;align-items:center;margin-top:.75rem}
+#answer{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}#status{font-size:.93rem;margin:0}
+.note{font-size:.93rem;color:#4b6052}label{display:block;margin-bottom:.45rem;font-weight:600}
+:focus-visible{outline:3px solid #217f5b;outline-offset:3px}
+</style>
+</head>
+<body>
+<header><div><h1>烟叶云服 · 公开问答</h1><p>无需账号，打开即可提问</p></div></header>
+<main>
+<form id="ask" autocomplete="off">
+<label for="question">你想问什么？</label>
+<textarea id="question" name="question" rows="4" maxlength="300" required aria-describedby="hint"></textarea>
+<p class="note" id="hint">每次只回答当前问题，不记忆上一轮。请勿输入个人信息或内部资料。问题最多 300 字。</p>
+<div class="actions"><button type="submit" id="send">提问</button><p id="status" role="status"></p></div>
+</form>
+<section id="result" aria-labelledby="answer-label" hidden>
+<h2 id="answer-label">智能体回复</h2>
+<p id="answer" aria-live="polite"></p>
+</section>
+<p class="note">公开演示设有用量上限。AI 回答仅供参考。</p>
+</main>
+<script type="module" src="./public-chat.mjs"></script>
+</body>
+</html>
