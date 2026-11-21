@@ -178,7 +178,7 @@ export default {
     const deadline = AbortSignal.timeout(24000);
     try {
       const upstream = await fetch(UPSTREAM, {
-        method: 'POST', redirect: 'error', signal: deadline,
+        method: 'POST', redirect: 'manual', signal: deadline,
         headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json', Accept: 'text/event-stream' },
         body: payload,
       });
